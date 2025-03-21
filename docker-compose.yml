@@ -1,0 +1,10 @@
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: my_project/scraper/Dockerfile
+    container_name: crypto_scraper
+    volumes:
+      - ./crypto_data.db:/app/crypto_data.db
+      - ./logs:/var/log
+    restart: always
