@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from app.main import app
+from scraper.main import app
 import pytest
 from unittest.mock import patch
 
