@@ -24,9 +24,11 @@ git clone https://github.com/mikewig/Web-Scraping-Project.git
 cd Web-Scraping-Project
 ```
 
-- Instala los requerimientos necesarios para correr el programa
+- Inicia el entorno virtual e instala los requerimientos necesarios para la ejecución del programa
 
 ```bash
+source venv/bin/activate  # En Mac/Linux
+venv\Scripts\activate     # En Windows
 pip install -r requirements.txt
 ```
 
@@ -35,8 +37,6 @@ pip install -r requirements.txt
 - Este comando y tu scrapping estaria en funcionamiento!
 
 ```python
-source venv/bin/activate  # En Mac/Linux
-venv\Scripts\activate     # En Windows
 python crypto_scraper.py
 ```
 
