@@ -4,6 +4,13 @@ FROM python:${PYTHON_VERSION}-slim as base
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
+RUN apt-get update && apt-get install -y \
+    pkg-config \
+    libmariadb-dev \
+    default-libmysqlclient-dev \
+    build-essential \
+    python3-dev
+
 USER root
 RUN apt-get update && apt-get install -y \
     wget \
@@ -52,7 +59,7 @@ COPY . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY cronfile /etc/cron.d/crypto-cron
+COPY cronjob /etc/cron.d/crypto-cron
 
 RUN chmod 0644 /etc/cron.d/crypto-cron && crontab /etc/cron.d/crypto-cron
 

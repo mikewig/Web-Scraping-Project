@@ -1,0 +1,1 @@
+*/10 * * * * root /usr/local/bin/python /my_project/scraper/crypto_scraper.py >> /var/log/cron.log 2>&1
